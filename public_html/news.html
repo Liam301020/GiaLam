@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Gia Lam Nguyen">
+  <title>Liam's Visit Korea - Tours</title>
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <!-- Logo and company name -->
+      <a class="navbar-brand d-flex align-items-center" href="home.html">
+        <img src="Picture/korealogo.png" alt="Visit Korea Logo" class="circle-logo" height="60">
+        <span class="ms-2 fw-bold">Liam's Visit Korea</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="tourservice.html">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="travelguide.html">Travel Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+        </ul>
+        <!-- Signup/signin-->
+        <div id="userStatus" class="d-flex align-items-center gap-2"></div>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- Page Title & Search -->
+  <div class="container text-center my-5">
+    <h1 class="fw-bold">NEWS</h1>
+    <h3 class="text-muted">Stay updated with our latest news, stories, and travel updates!</h3>
+  </div>
+
+  <div class="container my-3">
+    <div class="d-flex justify-content-end">
+      <form id="searchForm" class="d-flex search-form">
+        <input id="searchInput" class="form-control search-input me-2" type="search"
+          placeholder="Search by destination..." required>
+        <button class="btn search-button" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="text-center my-4">
+      <h2>Explore Korea with Us!</h2>
+    </div>
+    <div id="resultArea" class="row mt-4 g-3"></div>
+  </div>
+
+  <!-- Travel Story -->
+  <div class="container mb-5 p-4 section-box bg-pink">
+    <h4 class="fw-bold mb-4">Travel Story</h4>
+
+    <div id="travelStoryCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+
+      <!-- Indicators -->
+      <div class="d-flex justify-content-center mb-4">
+        <ul class="pagination" id="travelStoryPagination">
+          <li class="page-item"><button class="page-link" onclick="goToSlide(0)">1</button></li>
+          <li class="page-item"><button class="page-link" onclick="goToSlide(1)">2</button></li>
+          <li class="page-item"><button class="page-link" onclick="goToSlide(2)">3</button></li>
+          <li class="page-item"><button class="page-link" onclick="goToSlide(3)">4</button></li>
+        </ul>
+      </div>
+
+      <!-- Carousel Inner -->
+      <div class="carousel-inner bg-white rounded p-4">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row align-items-center">
+            <!-- Left Side -->
+            <div class="col-md-6">
+              <img src="Picture/HiddenGems.jpg" alt="Seoul" class="img-fluid rounded">
+            </div>
+
+            <!-- Right Side -->
+            <div class="col-md-6">
+              <h5 class="fw-bold">Exploring Seoul's Hidden Gems</h5>
+              <p class="text-muted">“Lose yourself in the timeless alleys of Seoul, where tradition whispers through
+                ancient palaces and vibrant markets pulse with life. Every corner reveals a story waiting to be
+                discovered!”</p>
+
+              <!-- Button trigger collapse -->
+              <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#moreInfoSeoul" aria-expanded="false" aria-controls="moreInfoSeoul">
+                Show More Activities
+              </button>
+
+              <!-- Collapsible content -->
+              <div class="collapse mt-3" id="moreInfoSeoul">
+                <div class="card card-body bg-light">
+                  <ul>
+                    <li>Wander through hidden hanok villages and experience authentic Korean street food at bustling
+                      markets.</li>
+                    <li>Marvel at Seoul’s centuries-old royal palaces where tradition meets modern life — every turn
+                      promises a new discovery!</li>
+                    <li>Explore the quiet serenity of Bukchon Hanok Village, where traditional rooftops overlook a
+                      vibrant city skyline.</li>
+                    <li>Venture into Ikseon-dong’s charming alleyways filled with artisan cafés and craft boutiques.
+                    </li>
+                    <li>Savor sizzling tteokbokki, hotteok, and fresh seafood skewers at lively night markets like
+                      Gwangjang and Namdaemun.</li>
+                    <li>Stand in awe before Gyeongbokgung Palace, where guards in colorful hanbok reenact royal
+                      ceremonies amidst grand courtyards and stone pathways.</li>
+                    <li>Discover hidden tea houses tucked behind wooden gates and listen to street musicians serenading
+                      busy plazas.</li>
+                    <li>Seoul invites you to slow down, look closer, and fall in love with its unique blend of the
+                      ancient and the modern.</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row align-items-center">
+            <!-- Left Side -->
+            <div class="col-md-6">
+              <img src="Picture/BusanBeaches.jpg" alt="Busan" class="img-fluid rounded">
+            </div>
+
+            <!-- Right Side -->
+            <div class="col-md-6">
+              <h5 class="fw-bold">Sunsets on Busan's Beaches</h5>
+              <p class="text-muted">“Let the golden sands of Busan warm your feet as you stroll along the coastline,
+                savoring fresh seafood and soaking in the spirited rhythms of Korea’s beloved seaside city.”
+              </p>
+
+              <!-- Button trigger collapse -->
+              <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#moreInfoBusan" aria-expanded="false" aria-controls="moreInfoBusan">
+                Show More Activities
+              </button>
+
+              <!-- Collapsible content -->
+              <div class="collapse mt-3" id="moreInfoBusan">
+                <div class="card card-body bg-light">
+                  <ul>
+                    <li>Walk along Haeundae Beach and watch stunning sunsets over the water.</li>
+                    <li>Explore the colorful streets of Gamcheon Culture Village.</li>
+                    <li>Sample the freshest seafood at Jagalchi Fish Market.</li>
+                    <li>Take the Sky Capsule at Blueline Park for coastal views.</li>
+                    <li>Discover Busan’s vibrant café culture in Gwangan and Songjeong neighborhoods.</li>
+                    <li>Experience lively night markets illuminated with neon lights and ocean breezes.</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row align-items-center">
+            <!-- Left Side -->
+            <div class="col-md-6">
+              <img src="Picture/JejuIsland.jpg" alt="Jeju Island" class="img-fluid rounded">
+            </div>
+
+            <!-- Right Side -->
+            <div class="col-md-6">
+              <h5 class="fw-bold">Jeju Island Adventure</h5>
+              <p class="text-muted">“Escape to Jeju’s wild beauty — where volcanic landscapes meet emerald seas,
+                waterfalls tumble into lush forests, and every breeze carries a scent of adventure.”</p>
+
+              <!-- Button trigger collapse -->
+              <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#moreInfoJeju" aria-expanded="false" aria-controls="moreInfoJeju">
+                Show More Activities
+              </button>
+
+              <!-- Collapsible content -->
+              <div class="collapse mt-3" id="moreInfoJeju">
+                <div class="card card-body bg-light">
+                  <ul>
+                    <li>Hike to the summit of Seongsan Ilchulbong (Sunrise Peak).</li>
+                    <li>Visit Jeongbang Waterfall, flowing directly into the ocean.</li>
+                    <li>Explore ancient lava tubes like Manjanggul Cave.</li>
+                    <li>Relax at Hyeopjae Beach with its turquoise waters and white sands.</li>
+                    <li>Wander through green tea fields at O’Sulloc Tea Museum.</li>
+                    <li>Meet Jeju’s iconic Dol hareubang stone grandfathers guarding the island.</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- Slide 4-->
+        <div class="carousel-item">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <img src="Picture/NamiIsland.jpg" alt="Nami Island" class="img-fluid rounded">
+            </div>
+
+            <div class="col-md-6">
+              <h5 class="fw-bold">Autumn Romance at Nami Island</h5>
+              <p class="text-muted">“Wander through dreamy tree-lined paths ablaze with autumn colours at Nami Island, a
+                magical escape where every golden leaf tells a love story.”</p>
+
+              <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#moreInfoNami" aria-expanded="false" aria-controls="moreInfoNami">
+                Show More Activities
+              </button>
+
+              <div class="collapse mt-3" id="moreInfoNami">
+                <div class="card card-body bg-light">
+                  <ul>
+                    <li>Walk along tree-lined paths glowing with golden and red foliage in autumn.</li>
+                    <li>Rent a bicycle and cycle around the island for scenic views.</li>
+                    <li>Pose at romantic landmarks from the famous "Winter Sonata" Korean drama.</li>
+                    <li>Enjoy riverside cafés and cozy bakeries along the Han River.</li>
+                    <li>Take a short ferry ride to the island or enjoy the scenic zip wire across the river!</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Update Section -->
+  <div class="container mb-5 p-4 section-box">
+    <div class="row align-items-center">
+      <!-- Text Side -->
+      <div class="col-md-6">
+        <h4 class="fw-bold text-danger mb-3">New Tours Launch</h4>
+        <p class="text-muted">
+          Discover our latest exclusive tours designed to immerse you in Korea's vibrant culture, historical landmarks,
+          and scenic landscapes.
+        </p>
+
+        <!-- Show More Info Button -->
+        <button class="btn search-button rounded-pill px-4 py-2 mt-2" type="button" data-bs-toggle="collapse"
+          data-bs-target="#tourDetails" aria-expanded="false" aria-controls="tourDetails">
+          See Tour Details
+        </button>
+
+        <!-- Collapsible Content -->
+        <div class="collapse mt-3" id="tourDetails">
+          <div class="card card-body bg-light">
+            <h6 class="fw-bold mb-2">Tour Highlights</h6>
+            <ul class="mb-3">
+              <li>Explore the traditional architecture and culture of Jeonju Hanok Village.</li>
+              <li>Visit the lively Busan night markets and enjoy the coastal scenery.</li>
+              <li>Experience authentic street food adventures in local markets.</li>
+            </ul>
+            <h6 class="fw-bold">Tour Pricing</h6>
+            <p>From <strong>$200</strong> per person. Discounts available for early bookings.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Side -->
+      <div class="col-md-6">
+        <div class="ratio ratio-16x9 rounded-4 overflow-hidden">
+          <video autoplay muted loop playsinline class="w-100 h-100">
+            <source src="Picture/newtour.mp4" type="video/mp4">
+            Oops! Your browser cannot display the video.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Promotion and Events -->
+  <div class="container mb-5">
+    <div class="row g-4">
+      <div class="col-md-6">
+
+        <!-- Promotion Block 1 -->
+        <div class="p-4 floating-box mb-4">
+          <h5 class="fw-bold mb-3 text-danger">Promotion</h5>
+          <p class="text-muted">
+            Save up to <span class="fw-bold text-danger">20% off</span> on cultural tours! Limited-time seasonal offers
+            on select Korean cultural experiences.
+          </p>
+
+          <ul>
+            <li>Seoul Royal Palaces Guided Tours</li>
+            <li>Busan Coastal Food Markets Experience</li>
+            <li>Jeju Island Adventure Packages</li>
+          </ul>
+
+          <!-- Collapse Button -->
+          <div class="text-center">
+            <button class="btn promotion-button rounded-pill mt-3 text-dark" type="button" data-bs-toggle="collapse"
+              data-bs-target="#promotionDetails" aria-expanded="false" aria-controls="promotionDetails">
+              See Promotions
+            </button>
+          </div>
+
+          <!-- Collapsible Content -->
+          <div class="collapse mt-3" id="promotionDetails">
+            <div class="card card-body bg-light">
+              <h6 class="fw-bold mb-3 text-danger">Special Deals Highlights:</h6>
+              <ul>
+                <li><strong>Seoul Royal Palaces:</strong> Guided historical walking tours, experience hanbok rental
+                  services!</li>
+                <li><strong>Busan Night Markets:</strong> Food tasting package + cultural souvenir gift included!</li>
+                <li><strong>Jeju Island Adventure:</strong> Full-day guided tour + 1 free spa voucher!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promotion Block 2 (newly added) -->
+        <div class="p-4 floating-box">
+          <h5 class="fw-bold mb-3 text-danger">Special Spring Offers</h5>
+          <p class="text-muted">
+            Explore Korea’s vibrant spring with exclusive packages available only this season.
+          </p>
+          <ul>
+            <li>Cherry Blossom Tours in Seoul</li>
+            <li>Lantern Festival Cultural Nights</li>
+            <li>Green Tea Plantation Experience</li>
+          </ul>
+          <div class="text-center">
+            <button class="btn promotion-button rounded-pill mt-3 text-dark" type="button" data-bs-toggle="collapse"
+              data-bs-target="#promotionDetails2" aria-expanded="false" aria-controls="promotionDetails2">
+              See Promotions
+            </button>
+          </div>
+
+          <!-- Collapsible Content for Special Spring Offers -->
+          <div class="collapse mt-3" id="promotionDetails2">
+            <div class="card card-body bg-light">
+              <h6 class="fw-bold mb-3 text-danger">Spring Deals Highlights:</h6>
+              <ul>
+                <li><strong>Cherry Blossom Tours:</strong> Enjoy guided walking tours under full bloom cherry blossoms.
+                </li>
+                <li><strong>Lantern Festival Nights:</strong> Nighttime cultural performances and lantern parades.</li>
+                <li><strong>Green Tea Plantation:</strong> Guided experience with tea tasting at Boseong farms.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Events -->
+      <div class="col-md-6">
+        <div class="p-4 section-box">
+          <h5 class="fw-bold">Spring Seasonal Events</h5>
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="event-card p-2">
+                <img src="Picture/YeouidoCherryBlossomFestival.jpg" class="img-fluid rounded event-image"
+                  alt="Yeouido Cherry Blossom Festival">
+                <div class="small mt-2 event-caption">
+                  <strong>Yeouido Cherry Blossom Festival</strong><br>
+                  Date: April 5–10, 2025<br>
+                  Location: Yeouido, Seoul<br>
+                  Category: Spring Festival
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="event-card p-2">
+                <img src="Picture/BuddhaBirthdayLanternFestival.jpg" class="img-fluid rounded event-image"
+                  alt="Buddha's Birthday Lantern Festival">
+                <div class="small mt-2 event-caption">
+                  <strong>Buddha's Birthday Lantern Festival</strong><br>
+                  Date: May 3–5, 2025<br>
+                  Location: Jogyesa Temple, Seoul<br>
+                  Category: Cultural Event
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="event-card p-2">
+                <img src="Picture/BoseongGreenTeaFestival.jpg" class="img-fluid rounded event-image"
+                  alt="Boseong Green Tea Festival">
+                <div class="small mt-2 event-caption">
+                  <strong>Boseong Green Tea Festival</strong><br>
+                  Date: May 17–21, 2025<br>
+                  Location: Boseong, Jeollanam-do<br>
+                  Category: Food Festival
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="event-card p-2">
+                <img src="Picture/images.jpeg" class="img-fluid rounded event-image" alt="Gyeongju Cultural Festival">
+                <div class="small mt-2 event-caption">
+                  <strong>Gyeongju Cultural Festival</strong><br>
+                  Date: May 10–16, 2025<br>
+                  Location: Gyeongju, Gyeongsangbuk-do<br>
+                  Category: Heritage Festival
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button onclick="topFunction()" id="backToTopBtn" title="Back to Top" class="btn btn-primary rounded-circle shadow"
+    style="display:none; position:fixed; bottom:30px; right:30px; z-index:99;">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <p>© 2025 Visit Korea. Last updated: April 2025. Contact: info@visitkorea.com</p>
+  </footer>
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="signupForm" action="/signup" method="POST">
+            <div id="signupError"></div>
+
+            <!-- Username -->
+            <div class="mb-3">
+              <label for="signupUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="signupUsername" name="username" required>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="signupEmail" name="email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="signupPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="signupPassword" name="password" required>
+            </div>
+
+            <!-- Confirm Password (optional, no need name) -->
+            <div class="mb-3">
+              <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="signupConfirmPassword" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

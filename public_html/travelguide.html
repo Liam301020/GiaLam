@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Gia Lam Nguyen">
+  <title>Liam's Visit Korea - Tours</title>
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <!-- Logo and company name -->
+      <a class="navbar-brand d-flex align-items-center" href="home.html">
+        <img src="Picture/korealogo.png" alt="Visit Korea Logo" class="circle-logo" height="60">
+        <span class="ms-2 fw-bold">Liam's Visit Korea</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="tourservice.html">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="travelguide.html">Travel Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+        </ul>
+        <!-- Signup/signin-->
+        <div id="userStatus" class="d-flex align-items-center gap-2"></div>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- Page Title -->
+  <div class="container text-center my-5">
+    <h1 class="fw-bold">Travel Guide</h1>
+    <h3 class="text-muted">Explore the best of Korea with our Travel Guide — from must-do activities and cultural
+      highlights to breathtaking seasonal adventures.</h3>
+  </div>
+
+  <!-- Search -->
+  <div class="container my-3">
+    <div class="d-flex justify-content-end">
+      <form id="searchForm" class="d-flex search-form">
+        <input id="searchInput" class="form-control search-input me-2" type="search"
+          placeholder="Search by destination..." required>
+        <button class="btn search-button" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="text-center my-4">
+      <h2>Explore Korea with Us!</h2>
+    </div>
+    <div id="resultArea" class="row mt-4 g-3"></div>
+  </div>
+  <!-- Section 1: Things to Do -->
+  <div class="mb-5">
+    <h5><strong>Things to Do</strong></h5>
+    <div id="thingsToDoCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1: Rail Bike -->
+        <div class="carousel-item active">
+          <div class="row g-0 align-items-center">
+            <div class="col-md-6">
+              <img src="Picture/BukhangangRailBike.jpg" class="d-block w-100 rounded-start" alt="Bukhangang Rail Bike">
+            </div>
+            <div class="col-md-6 p-4">
+              <h5>Bukhangang Rail Bike</h5>
+              <p>Enjoy a scenic rail bike ride along the beautiful Bukhangang River!</p>
+              <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#railbikeInfo" aria-expanded="false" aria-controls="railbikeInfo">
+                Explore Activity
+              </button>
+
+              <!-- Collapse Info -->
+              <div class="collapse mt-2" id="railbikeInfo">
+                <ul class="ms-3">
+                  <li>Pedal along the Bukhangang River's scenic railway tracks.</li>
+                  <li>Admire stunning mountain and river views throughout the journey.</li>
+                  <li>Stop for beautiful photo opportunities along the route.</li>
+                  <li>Relax at cozy cafés and rest spots near the park.</li>
+                  <li>Enjoy a refreshing outdoor activity perfect for families and groups.</li>
+                  <br>
+                  <li>&#128205; <strong>Location:</strong> 1383, Gimyujeong-ro, Chuncheon-si, Gangwon-do</li>
+                  <li>&#128340; <strong>Operating Hours:</strong>
+                    <ul>
+                      <li><strong>March – November:</strong> 9:00, 10:00, 11:00, 12:00, 13:30, 14:30, 15:30, 16:30,
+                        17:30</li>
+                      <li><strong>December – February:</strong> Same as above except last departure is at 16:30</li>
+                    </ul>
+                  </li>
+                  <li>&#128181; <strong>Pricing (approximate):</strong>
+                    <ul>
+                      <li>2-seater Rail Bike: ₩35,000 (~41 AUD) per bike</li>
+                      <li>4-seater Rail Bike: ₩48,000 (~57 AUD) per bike</li>
+                      <li>4-seater bikes depart first, followed by 2-seaters</li>
+                    </ul>
+                  </li>
+                  <li style="color: red;"><strong>Advance reservation is recommended, especially on weekends!</strong>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: KPOP Experience -->
+        <div class="carousel-item">
+          <div class="row g-0 align-items-center">
+            <div class="col-md-6">
+              <img src="Picture/KPOPExperience.jpg" class="d-block w-100 rounded-start" alt="KPOP Experience">
+            </div>
+            <div class="col-md-6 p-4">
+              <h5>KPOP Experience</h5>
+              <p>Attend KPOP concerts, visit entertainment agencies, and learn KPOP dance moves!</p>
+              <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#kpopInfo" aria-expanded="false" aria-controls="kpopInfo">
+                Explore Activity
+              </button>
+
+              <div class="collapse mt-2" id="kpopInfo">
+                <ul class="ms-3">
+                  <li>Visit HYBE Insight and SM Town museums to explore KPOP history and memorabilia.</li>
+                  <li>Attend live KPOP concerts or music shows like Inkigayo and Music Bank.</li>
+                  <li>Join KPOP dance classes and learn signature choreography moves.</li>
+                  <li>Shop for albums, lightsticks, and official KPOP merchandise.</li>
+                  <br>
+                  <li>&#128205; <strong>Main Areas:</strong> Gangnam, Hongdae, Mapo-gu in Seoul</li>
+                  <li>&#128340; <strong>Recommended Time:</strong> Check event schedules; weekends have more live
+                    performances.</li>
+                  <li>&#128181; <strong>Estimated Costs:</strong>
+                    <ul>
+                      <li>Dance Class: ~40–60 AUD per session</li>
+                      <li>Concert Tickets: starting from ~100 AUD</li>
+                      <li>Souvenirs and Merchandise: ~30–80 AUD</li>
+                    </ul>
+                  </li>
+                  <li style="color: red;"><strong>Tip: Book concert tickets early, they sell out quickly!</strong>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Shopping -->
+        <div class="carousel-item">
+          <div class="row g-0 align-items-center">
+            <div class="col-md-6">
+              <img src="Picture/ShoppinginMyeongdong.jpg" class="d-block w-100 rounded-start"
+                alt="Shopping in Myeongdong">
+            </div>
+            <div class="col-md-6 p-4">
+              <h5>Shopping in Myeongdong</h5>
+              <p>Shop the latest fashion, skincare, and KPOP goods at Korea’s trendiest streets!</p>
+              <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#shoppingInfo" aria-expanded="false" aria-controls="shoppingInfo">
+                Explore Activity
+              </button>
+
+              <div class="collapse mt-2" id="shoppingInfo">
+                <ul class="ms-3">
+                  <li>Explore hundreds of cosmetic shops offering top Korean skincare brands.</li>
+                  <li>Shop for trendy clothing, accessories, and KPOP-related items.</li>
+                  <li>Sample street food like Tteokbokki, Hotteok, and Korean Fried Chicken.</li>
+                  <li>Enjoy tax-free shopping for tourists at designated stores.</li>
+                  <br>
+                  <li>&#128205; <strong>Location:</strong> Myeongdong Shopping Street, Jung-gu, Seoul</li>
+                  <li>&#128340; <strong>Best Time to Visit:</strong> Evening hours (after 5PM) for lively atmosphere
+                    and full street food stalls.</li>
+                  <li>&#128181; <strong>Average Spending:</strong>
+                    <ul>
+                      <li>Skincare sets: ~30–70 AUD</li>
+                      <li>Street food meals: ~5–10 AUD</li>
+                      <li>Clothing and accessories: depends on style (~30–100 AUD)</li>
+                    </ul>
+                  </li>
+                  <li style="color: red;"><strong>Tip: Bring cash (KRW) for small vendors and food stalls!</strong>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation buttons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#thingsToDoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#thingsToDoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Section 2: Food & Culture -->
+  <div class="mb-5">
+    <h5><strong>Food & Culture</strong></h5>
+
+    <div id="foodCultureCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1: Korean Food Experience -->
+        <div class="carousel-item active">
+          <div class="row g-0 align-items-center">
+
+            <!-- Text on the left -->
+            <div class="col-md-6 p-4">
+              <div class="text-start">
+                <h5>Korean Food Experience</h5>
+                <p>Discover the delicious world of Korean cuisine from spicy kimchi to sizzling BBQ!</p>
+              </div>
+
+              <div class="text-end">
+                <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#foodInfo" aria-expanded="false" aria-controls="foodInfo">
+                  Explore Activity
+                </button>
+              </div>
+              <div class="collapse mt-2 text-start" id="foodInfo">
+                <ul class="ms-3">
+                  <li>Try authentic dishes like Bibimbap, Kimchi, and Korean Fried Chicken.</li>
+                  <li>Visit traditional markets such as Gwangjang and Namdaemun.</li>
+                  <li>Join a Korean cooking class experience!</li>
+                  <hr>
+                  <li>&#128205; <strong>Location:</strong> Gwangjang Market, Seoul</li>
+                  <li>&#128340; <strong>Best Time:</strong> Lunch and evening for street food tours</li>
+                  <li>&#128181; <strong>Estimated Costs:</strong> Meals ~10–25 AUD per person</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Image on the right -->
+            <div class="col-md-6">
+              <img src="Picture/KoreanFoodExperience.jpg" class="d-block w-100 img-fluid rounded-end object-cover"
+                alt="Korean Food">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 2: Hanbok Experience -->
+        <div class="carousel-item">
+          <div class="row g-0 align-items-center">
+
+            <!-- Text on the left -->
+            <div class="col-md-6 p-4">
+              <div class="text-start">
+                <h5>Hanbok Experience</h5>
+                <p>Dress up in beautiful Hanbok and stroll through Korea's historic palaces!</p>
+              </div>
+              <div class="text-end">
+                <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#hanbokInfo" aria-expanded="false" aria-controls="hanbokInfo">
+                  Explore Activity
+                </button>
+              </div>
+              <div class="collapse mt-2 text-start" id="hanbokInfo">
+                <ul class="ms-3">
+                  <li>Rent traditional Hanbok attire for photoshoots at royal palaces.</li>
+                  <li>Learn the history and etiquette of Hanbok clothing.</li>
+                  <hr>
+                  <li>&#128205; <strong>Location:</strong> Gyeongbokgung Palace, Seoul</li>
+                  <li>&#128340; <strong>Best Time:</strong> Spring and Autumn for beautiful backgrounds</li>
+                  <li>&#128181; <strong>Estimated Costs:</strong> Hanbok rental ~20–30 AUD per 2 hours</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Image on the right -->
+            <div class="col-md-6">
+              <img src="Picture/Hanbokexperiences.jpg" class="d-block w-100 img-fluid rounded-end object-cover"
+                alt="Hanbok Culture">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 3: Traditional Tea Ceremony -->
+        <div class="carousel-item">
+          <div class="row g-0 align-items-center">
+
+            <!-- Text on the left -->
+            <div class="col-md-6 p-4">
+              <div class="text-start">
+                <h5>Traditional Tea Ceremony</h5>
+                <p>Experience Korea’s elegant tea culture with traditional ceremonies.</p>
+              </div>
+
+              <div class="text-end">
+                <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#teaInfo" aria-expanded="false" aria-controls="teaInfo">
+                  Explore Activity
+                </button>
+              </div>
+              <div class="collapse mt-2 text-start" id="teaInfo">
+                <ul class="ms-3">
+                  <li>Participate in a traditional Korean tea ceremony session.</li>
+                  <li>Learn the meanings behind Korean tea etiquette and practices.</li>
+                  <li>Taste various herbal and flower teas.</li>
+                  <hr>
+                  <li>&#128205; <strong>Location:</strong> Bukchon Hanok Village, Seoul</li>
+                  <li>&#128340; <strong>Best Time:</strong> Morning and afternoon</li>
+                  <li>&#128181; <strong>Estimated Costs:</strong> ~25–40 AUD per session</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Image on the right -->
+            <div class="col-md-6">
+              <img src="Picture/TraditionalTeaCeremony.jpg" class="d-block w-100 img-fluid rounded-end object-cover"
+                alt="Korean Tea Ceremony">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 4: Korean Festivals -->
+        <div class="carousel-item">
+          <div class="row g-0 align-items-center">
+
+            <!-- Text on the left -->
+            <div class="col-md-6 p-4">
+
+              <div class="text-start">
+                <h5>Korean Traditional Festivals</h5>
+                <p>Join vibrant Korean festivals celebrating culture, music, and traditions!</p>
+              </div>
+
+
+              <div class="text-end">
+                <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#festivalInfo" aria-expanded="false" aria-controls="festivalInfo">
+                  Explore Activity
+                </button>
+              </div>
+
+
+              <div class="collapse mt-2 text-start" id="festivalInfo">
+                <ul class="ms-3">
+                  <li>Celebrate Chuseok (Korean Thanksgiving) with special foods and games.</li>
+                  <li>Join Lunar New Year (Seollal) festivities in palaces and villages.</li>
+                  <li>Experience Lotus Lantern Festival with beautiful night parades.</li>
+                  <hr>
+                  <li>&#128205; <strong>Main Locations:</strong> Seoul, Busan, Gyeongju</li>
+                  <li>&#128340; <strong>Best Time:</strong> Chuseok (September), Seollal (January–February), Spring
+                    Lantern Festival</li>
+                  <li>&#128181; <strong>Estimated Costs:</strong> Mostly free to attend; optional tour packages ~30–50
+                    AUD</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Image on the right -->
+            <div class="col-md-6">
+              <img src="Picture/KoreanTraditionalFestivals.jpg" class="d-block w-100 img-fluid rounded-end object-cover"
+                alt="Korean Festivals">
+            </div>
+
+          </div>
+        </div>
+        <!-- Navigation buttons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#foodCultureCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#foodCultureCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Seasonal and Travel Trips -->
+  <div class="mb-5">
+    <h5><strong>Seasonal and Travel Trips</strong></h5>
+
+    <div id="seasonalTripsCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1: Spring -->
+        <div class="carousel-item active">
+          <div class="row g-0 align-items-center">
+            <div class="col-md-6">
+              <img src="Picture/spring.jpg" class="d-block w-100 img-fluid rounded-start object-cover"
+                alt="Spring Season">
+            </div>
+            <div class="col-md-6 p-4 text-start">
+              <h5>Spring Blossoms in Korea</h5>
+              <p>Experience breathtaking cherry blossoms and vibrant festivals during Korean spring!</p>
+              <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#springInfo" aria-expanded="false" aria-controls="springInfo">
+                Explore Activity
+              </button>
+              <div class="collapse mt-2 text-start" id="springInfo">
+                <ul class="ms-3">
+                  <li>Visit Yeouido Cherry Blossom Festival in Seoul.</li>
+                  <li>Explore Jinhae Cherry Blossom Festival.</li>
+                  <li>Perfect season for Hanbok photoshoots!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Summer -->
+        <div class="carousel-item">
+          <div class="row g-0 align-items-center">
+            <div class="col-md-6">
+              <img src="Picture/summer.jpg" class="d-block w-100 img-fluid rounded-start object-cover"
+                alt="Summer Season">
+            </div>
+            <div class="col-md-6 p-4 text-start">
+              <h5>Summer Adventures</h5>
+              <p>Enjoy Korea’s beaches, water festivals, and vibrant nightlife during summer!</p>
+              <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#summerInfo" aria-expanded="false" aria-controls="summerInfo">
+                Explore Activity
+              </button>
+              <div class="collapse mt-2 text-start" id="summerInfo">
+                <ul class="ms-3">
+                  <li>Beach trip to Busan or Jeju Island.</li>
+                  <li>Attend Boryeong Mud Festival!</li>
+                  <li>Night markets and summer fireworks.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Autumn -->
+        <div class="carousel-item">
+          <div class="row g-0 align-items-center">
+            <div class="col-md-6">
+              <img src="Picture/autumn.jpg" class="d-block w-100 img-fluid rounded-start object-cover"
+                alt="Autumn Season">
+            </div>
+            <div class="col-md-6 p-4 text-start">
+              <h5>Autumn Colors and Festivals</h5>
+              <p>Witness Korea’s breathtaking autumn foliage and cultural celebrations!</p>
+              <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#autumnInfo" aria-expanded="false" aria-controls="autumnInfo">
+                Explore Activity
+              </button>
+              <div class="collapse mt-2 text-start" id="autumnInfo">
+                <ul class="ms-3">
+                  <li>Walk Nami Island’s golden tree lanes.</li>
+                  <li>Explore Seoraksan National Park for peak foliage.</li>
+                  <li>Attend Andong Mask Dance Festival.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: Winter -->
+        <div class="carousel-item">
+          <div class="row g-0 align-items-center">
+            <div class="col-md-6">
+              <img src="Picture/winter.jpg" class="d-block w-100 img-fluid rounded-start object-cover"
+                alt="Winter Season">
+            </div>
+            <div class="col-md-6 p-4 text-start">
+              <h5>Winter Wonderland</h5>
+              <p>Enjoy Korea’s snowy landscapes, ski resorts, and festive light festivals!</p>
+              <button class="btn search-button rounded-pill mt-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#winterInfo" aria-expanded="false" aria-controls="winterInfo">
+                Explore Activity
+              </button>
+              <div class="collapse mt-2 text-start" id="winterInfo">
+                <ul class="ms-3">
+                  <li>Go skiing at Yongpyong or Vivaldi Park.</li>
+                  <li>See the Garden of Morning Calm Winter Lights.</li>
+                  <li>Enjoy traditional tteokguk on Lunar New Year!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel buttons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#seasonalTripsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#seasonalTripsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+  </div>
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <p>© 2025 Visit Korea. Last updated: April 2025. Contact: info@visitkorea.com</p>
+  </footer>
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="signupForm" action="/signup" method="POST">
+            <div id="signupError"></div>
+
+            <!-- Username -->
+            <div class="mb-3">
+              <label for="signupUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="signupUsername" name="username" required>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="signupEmail" name="email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="signupPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="signupPassword" name="password" required>
+            </div>
+
+            <!-- Confirm Password (optional, no need name) -->
+            <div class="mb-3">
+              <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="signupConfirmPassword" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

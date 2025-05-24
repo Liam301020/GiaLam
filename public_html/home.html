@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Gia Lam Nguyen">
+  <title>Liam's Visit Korea - Tours</title>
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+    <div class="container">
+      <!-- Logo and company name -->
+      <a class="navbar-brand d-flex align-items-center" href="home.html">
+        <img src="Picture/korealogo.png" alt="Visit Korea Logo" class="circle-logo" height="60">
+        <span class="ms-2 fw-bold">Liam's Visit Korea</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="tourservice.html">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="travelguide.html">Travel Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+        </ul>
+        <!-- Signup/signin-->
+        <div id="userStatus" class="d-flex align-items-center gap-2"></div>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+
+  <!-- Banner -->
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="7000">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active fade-on-scroll">
+        <div class="video-slide fade-on-scroll">
+          <video autoplay loop muted playsinline class="video-bg">
+            <source src="Picture/istockphoto-2004388501-640_adpp_is.mp4" type="video/mp4">
+          </video>
+          <div class="overlay text-center">
+            <h1 class="text-white display-5 fw-bold">Explore Korea</h1>
+            <p class="text-light fs-5">Discover Tours, Culture, and Adventure</p>
+            <a href="tourservice.html" class="btn btn-light mt-3 search-button">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item active fade-on-scroll">
+        <div class="video-slide fade-on-scroll">
+          <video autoplay loop muted playsinline class="video-bg">
+            <source src="Picture/istockphoto-1740449073-640_adpp_is.mp4" type="video/mp4">
+          </video>
+          <div class="overlay text-center">
+            <h1 class="text-white display-5 fw-bold">Experience Local Life</h1>
+            <p class="text-light fs-5">Vibrant streets, food markets, and cultural gems</p>
+            <a href="news.html" class="btn btn-light mt-3 search-button">Explore News</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Search Section -->
+  <div class="container my-3">
+    <div class="d-flex justify-content-end">
+      <form id="searchForm" class="d-flex search-form">
+        <input id="searchInput" class="form-control search-input me-2" type="search"
+          placeholder="Search by destination..." required>
+        <button class="btn search-button" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="text-center my-4">
+      <h2>Explore Korea with Us!</h2>
+    </div>
+    <div id="resultArea" class="row mt-4 g-3"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Sidebar -->
+      <aside class="col-md-3 sidebar fade-on-scroll">
+        <h5 class="fw-bold mb-3">Four Seasons of Korea</h5>
+        <div id="categoryCard" class="card">
+          <img id="categoryImage" src="Picture/Spring.jpg" alt="Spring in Jinhae" class="card-img-top seasonal-image">
+          <div class="card-body">
+            <h6 id="categoryTitle" class="card-title">
+              <i class="bi bi-flower1 me-1"></i> Spring in Jinhae
+            </h6>
+            <p id="categoryDesc" class="card-text">
+              Witness the breathtaking beauty as cherry blossoms blanket the charming streets of Jinhae.
+            </p>
+            <div class="text-center">
+              <a href="travelguide.html#seasonalTripsSection" class="btn search-button rounded-pill mt-3">
+                Explore Seasonal Trips
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <ul class="pagination justify-content-center mt-3">
+          <li class="page-item"><button class="page-link active" onclick="showCategory(1)">1</button></li>
+          <li class="page-item"><button class="page-link" onclick="showCategory(2)">2</button></li>
+          <li class="page-item"><button class="page-link" onclick="showCategory(3)">3</button></li>
+          <li class="page-item"><button class="page-link" onclick="showCategory(4)">4</button></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content Right -->
+      <main class="col-md-9">
+        <section class="intro-card fade-on-scroll">
+          <h4 class="fw-bold">Welcome to Our Tour Page</h4>
+          <p>Embark on an unforgettable journey through Korea, where each season offers a unique blend of rich cultural
+            experiences, vibrant festivals, and breathtaking natural landscapes. From savoring the flavors of
+            traditional Korean cuisine to exploring the dynamic cities, historical sites, and serene countryside, Korea
+            promises to captivate every traveler. Whether you’re immersing yourself in the cherry blossoms of spring,
+            the lively summer festivals, the stunning autumn foliage, or the snow-covered beauty of winter, Korea
+            provides the perfect backdrop for creating lasting memories. Experience the warmth of Korean hospitality,
+            the excitement of adventure, and the peace of cultural exploration, all in one incredible destination.</p>
+        </section>
+
+        <div class="row g-4">
+
+          <!-- Testimonials -->
+          <div class="col-md-6">
+            <h5>Testimonials</h5>
+            <div class="tour-card testimonials-container">
+
+              <!-- customer 1 evaluation -->
+              <div class="testimonial-card p-3 mb-3 fade-on-scroll">
+                <div class="d-flex align-items-center mb-2">
+                  <img src="Picture/avt.jpg" alt="Hyuk Avatar" class="avatar-img me-3">
+                  <div>
+                    <strong>Hyuk, Seoul</strong><br>
+                    <span class="star-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </span>
+                  </div>
+                </div>
+                <p>"A fantastic tour! Loved every bite."</p>
+              </div>
+
+              <!-- customer 2 evaluation -->
+              <div class="testimonial-card p-3 mb-3 fade-on-scroll">
+                <div class="d-flex align-items-center mb-2">
+                  <img src="Picture/avt2.jpg" alt="Lew Avatar" class="avatar-img me-3">
+                  <div>
+                    <strong>Lew, Busan</strong><br>
+                    <span class="star-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </span>
+                  </div>
+                </div>
+                <p>"Beautiful experience with great local guides."</p>
+              </div>
+
+              <!-- customer 3 evaluation -->
+              <div class="testimonial-card p-3 mb-3 fade-on-scroll">
+                <div class="d-flex align-items-center mb-2">
+                  <img src="Picture/avt5.jpg" alt="Hanbin Avatar" class="avatar-img me-3">
+                  <div>
+                    <strong>Hanbin, Jeju</strong><br>
+                    <span class="star-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                    </span>
+                  </div>
+                </div>
+                <p>"I love Korea, this company was supported me and I was fun."</p>
+              </div>
+
+              <!-- customer 4 evaluation -->
+              <div class="testimonial-card p-3 mb-3 fade-on-scroll">
+                <div class="d-flex align-items-center mb-2">
+                  <img src="Picture/avt3.jpg" alt="Lisa Avatar" class="avatar-img me-3">
+                  <div>
+                    <strong>Lisa, Incheon</strong><br>
+                    <span class="star-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                    </span>
+                  </div>
+                </div>
+                <p>"The best cherry blossom views I've ever seen!"</p>
+              </div>
+
+            </div>
+          </div>
+          <!-- Favourite Tours Carousel -->
+          <div class="col-md-6">
+            <div class="section-box my-5">
+              <h5 class="text-center mb-3">Some Favourite Tours</h5>
+
+              <div id="favouriteToursCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <div class="carousel-inner" id="favouriteToursInner">
+                  <!-- JavaScript will inject tour slides here -->
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#favouriteToursCarousel"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#favouriteToursCarousel"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+  </div>
+  </main>
+  </div>
+  </div>
+
+  <!-- Follow + Subscribe in center-aligned row -->
+  <div class="container my-5">
+    <div class="row justify-content-center">
+
+      <!-- FOLLOW US (left side) -->
+      <div class="col-md-5 text-center">
+        <h5 class="fw-bold">Follow Us</h5>
+        <p>
+          <i class="bi bi-facebook"></i> Facebook |
+          <i class="bi bi-instagram"></i> Instagram |
+          <i class="bi bi-twitter"></i> Twitter
+        </p>
+      </div>
+
+      <!-- SUBSCRIBE (right side) -->
+      <div class="col-md-5 text-center">
+        <h5 class="fw-bold mb-2">Get Travel Tips & Deals</h5>
+        <p class="text-muted mb-2">Sign up to receive our latest Korea travel insights and exclusive promotions.</p>
+        <form id="newsletterForm" class="d-flex justify-content-center gap-2">
+          <input id="newsletterEmail" type="email" class="form-control" style="max-width: 250px;"
+            placeholder="Enter your email" required>
+          <button type="submit" class="btn search-button">Subscribe</button>
+        </form>
+        <div id="newsletterError" class="mt-2"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="container my-5 p-4 rounded shadow-sm" style="background-color: #ffffff;">
+    <h4 class="fw-bold text-center mb-3">Plan Your Dream Trip to Korea <i class="bi bi-airplane"></i></h4>
+    <p class="text-center text-muted mb-4">
+      Want something more personal? Explore these inspirations and let us help you customize a one-of-a-kind journey.
+    </p>
+
+    <div class="row g-4">
+      <!-- CARD 1 -->
+      <div class="col-md-4 fade-on-scroll">
+        <div class="card h-100 tour-card shadow-sm border-0">
+          <div class="card-img-container">
+            <img src="Picture/custom1.jpg" class="w-100 h-100 object-fit-cover" alt="Hanbok Experience">
+          </div>
+          <div class="card-body text-center">
+            <h6 class="fw-bold">Hanbok & Heritage Tour</h6>
+            <p class="text-muted small">Try on traditional Hanbok and explore palaces with a private guide.</p>
+            <a href="contactus.html" class="btn btn-outline-primary btn-sm">Customize this Tour</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-md-4 fade-on-scroll">
+        <div class="card h-100 tour-card shadow-sm border-0">
+          <div class="card-img-container">
+            <img src="Picture/custom2.jpg" class="w-100 h-100 object-fit-cover" alt="Temple in Autumn">
+          </div>
+          <div class="card-body text-center">
+            <h6 class="fw-bold">Nature & Temple Escapes</h6>
+            <p class="text-muted small">Breathe in fall colors at Korea’s peaceful mountain temples.</p>
+            <a href="contactus.html" class="btn btn-outline-primary btn-sm">Customize this Tour</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-md-4 fade-on-scroll">
+        <div class="card h-100 tour-card shadow-sm border-0">
+          <div class="card-img-container">
+            <img src="Picture/custom3.jpg" class="w-100 h-100 object-fit-cover" alt="Street Food Tour">
+          </div>
+          <div class="card-body text-center">
+            <h6 class="fw-bold">Night Food & Culture Tour</h6>
+            <p class="text-muted small">Explore Korean street food and neon-lit markets with a local expert.</p>
+            <a href="contactus.html" class="btn btn-outline-primary btn-sm">Customize this Tour</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Travel With us-->
+  <div class="container my-5">
+    <h4 class="text-center fw-bold mb-4">Why Travel with Liam’s Visit Korea?</h4>
+    <div class="row text-center">
+      <div class="col-md-4 fade-on-scroll">
+        <i class="bi bi-shield-check display-6 text-success"></i>
+        <h6 class="fw-bold mt-2">Trusted Local Experts</h6>
+        <p class="text-muted small">Our guides are passionate locals with deep knowledge and insider tips.</p>
+      </div>
+      <div class="col-md-4 fade-on-scroll">
+        <i class="bi bi-stars display-6 text-warning"></i>
+        <h6 class="fw-bold mt-2">Handpicked Experiences</h6>
+        <p class="text-muted small">We curate unforgettable cultural tours, not just typical attractions.</p>
+      </div>
+      <div class="col-md-4 fade-on-scroll">
+        <i class="bi bi-chat-dots display-6 text-primary"></i>
+        <h6 class="fw-bold mt-2">Excellent Support</h6>
+        <p class="text-muted small">We're here for you—before, during, and after your journey.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Developer Feature Descriptions -->
+  <div class="container my-5">
+    <div class="text-end">
+      <button class="btn search-button" onclick="toggleFeatureInfo()">🔧 View Implemented Features</button>
+    </div>
+
+    <div id="featureInfo" class="mt-4" style="display: none;">
+      <h5>Implemented Features and How They Were Built (Developer Notes)</h5>
+
+      <p><strong>1. Secure User Authentication</strong><br>
+        Passwords are securely hashed using <code>bcrypt</code> before being stored in the database. This ensures no
+        plain text credentials are saved. The frontend sends form data via <code>POST</code> with JSON format to avoid
+        exposure in URLs.
+      </p>
+
+      <p><strong>2. Form Validation (Client-Side)</strong><br>
+        HTML5 validation (e.g., <code>required</code>, <code>type="email"</code>) is combined with JavaScript checks to
+        ensure fields like email, phone number, and matching passwords are correct before submission. Errors are
+        displayed dynamically without page reload.
+      </p>
+
+      <p><strong>3. Bootstrap UI and Styling</strong><br>
+        The website is styled using Bootstrap 5.3, including a video banner, responsive layout, carousels, modals, and
+        styled buttons. These enhance user interaction and mobile responsiveness.
+      </p>
+
+      <p><strong>4. Dynamic Tour Search Using JSON</strong><br>
+        Users can search for tours by keyword. The frontend sends a <code>fetch</code> request to the server route
+        <code>/search</code>, which queries the SQLite database and returns JSON. JavaScript then dynamically renders
+        tour cards into the page.
+      </p>
+
+      <p><strong>5. Server-Side Error Handling</strong><br>
+        The Express backend returns structured JSON error messages for conditions such as duplicate registration,
+        missing fields, or database issues. The frontend reads these messages and shows them directly under the form
+        using Bootstrap styles.
+      </p>
+
+      <p><strong>6. Permanent Data Storage with SQLite</strong><br>
+        All user and tour data is stored persistently using SQLite. The <code>init.js</code> script defines and
+        populates three tables: <code>users</code>, <code>messages</code>, and <code>tours</code>. These are queried and
+        updated using <code>db.run()</code> and <code>db.all()</code> in the Express server.
+      </p>
+
+      <p><em>This section is included as part of the task requirement to document how features were implemented. It
+          serves as a mini wiki/tutorial to help other developers understand and replicate the project’s
+          functionality.</em></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleFeatureInfo() {
+      const info = document.getElementById("featureInfo");
+      info.style.display = info.style.display === "none" ? "block" : "none";
+    }
+  </script>
+  <!-- Chat Toggle with Sticker -->
+  <div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+    <!-- Sticker chat -->
+    <div id="chatLabel"
+      style="display: none; background-color: #333; color: white; padding: 4px 10px; font-size: 12px; border-radius: 10px; margin-bottom: 5px; text-align: center;">
+      Chat now
+    </div>
+
+    <!-- Nút tròn bật/tắt chat -->
+    <button id="chatToggle"
+      style="border-radius: 50%; width: 60px; height: 60px; background-color: #f06292; color: white; font-size: 26px; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+      <i class="bi bi-chat-dots-fill"></i>
+    </button>
+  </div>
+
+  <!-- Chat Box -->
+  <div id="chatBox"
+    style="display: none; position: fixed; bottom: 90px; right: 20px; width: 300px; background: white; border: 1px solid #ccc; padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); z-index: 9999;">
+    <h6>💬 Chat Box</h6>
+    <div id="messages"
+      style="height: 200px; overflow-y: auto; border: 1px solid #ddd; margin-bottom: 10px; padding: 5px;"></div>
+    <input type="text" id="messageInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button onclick="topFunction()" id="backToTopBtn" title="Back to Top" class="btn btn-primary rounded-circle shadow"
+    style="display:none; position:fixed; bottom:30px; right:30px; z-index:99;">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <p>© 2025 Visit Korea. Last updated: April 2025. Contact: info@visitkorea.com</p>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm" action="/login" method="POST">
+            <div class="mb-3">
+              <label for="loginUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="loginUsername" name="username" required>
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="signupForm" action="/signup" method="POST">
+            <div id="signupError"></div>
+
+            <!-- Input Username -->
+            <div class="mb-3">
+              <label for="signupUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="signupUsername" name="username" required>
+            </div>
+
+            <!-- Input Email -->
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="signupEmail" name="email" required>
+            </div>
+
+            <!-- Input Password -->
+            <div class="mb-3">
+              <label for="signupPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="signupPassword" name="password" required>
+            </div>
+
+            <!-- Input Confirm Password -->
+            <div class="mb-3">
+              <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="signupConfirmPassword" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <!-- Firebase App (the core SDK) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+  <script>
+    // Your Firebase config (
+    const firebaseConfig = {
+      apiKey: "AIzaSyAy8XJrNhNX6PLEMCVSdwXf5qbfSJ_dbIs",
+      authDomain: "liamchat-f7d2e.firebaseapp.com",
+      databaseURL: "https://liamchat-f7d2e-default-rtdb.firebaseio.com",
+      projectId: "liamchat-f7d2e",
+      storageBucket: "liamchat-f7d2e.appspot.com",
+      messagingSenderId: "660891127802",
+      appId: "1:660891127802:web:5395690e464e972889de43"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    function sendMessage() {
+      const msg = document.getElementById("messageInput").value;
+      if (msg.trim()) {
+        firebase.database().ref("messages").push({ text: msg });
+
+        fetch("http://localhost:3001/chatbot", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt: msg })
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.reply) {
+              firebase.database().ref("messages").push({ text: `🤖 ${data.reply}` });
+            }
+          })
+          .catch(err => {
+            console.error("Chatbot fetch failed:", err);
+          });
+
+        document.getElementById("messageInput").value = "";
+      }
+    }
+  </script>
+</body>
+
+</html>

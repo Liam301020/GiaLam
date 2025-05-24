@@ -1,0 +1,37 @@
+{
+  "name": "web-server",
+  "version": "1.0.0",
+  "description": "Starter express web server template",
+  "main": "index.js",
+  "scripts": {
+    "web": "node index.js",
+    "bot": "node chatbotServer.js",
+    "start": "npm-run-all --parallel web bot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "web",
+    "server",
+    "template",
+    "sit774"
+  ],
+  "author": "SIT774",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.15.0",
+    "node-fetch": "^2.7.0",
+    "sqlite3": "^5.1.7"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Gia Lam Nguyen">
+  <title>Liam's Visit Korea - Tours</title>
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <!-- Logo and company name -->
+      <a class="navbar-brand d-flex align-items-center" href="home.html">
+        <img src="Picture/korealogo.png" alt="Visit Korea Logo" class="circle-logo" height="60">
+        <span class="ms-2 fw-bold">Liam's Visit Korea</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="tourservice.html">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="travelguide.html">Travel Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+        </ul>
+        <!-- Signup/signin-->
+        <div id="userStatus" class="d-flex align-items-center gap-2"></div>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- Page Title -->
+  <div class="container text-center my-5">
+    <h1 class="fw-bold">Tour Services</h1>
+    <h3 class="text-muted">Explore some necessary information about our tours</h3>
+  </div>
+
+  <!-- Search Section -->
+  <div class="container my-3">
+    <div class="d-flex justify-content-end">
+      <form id="searchForm" class="d-flex search-form">
+        <input id="searchInput" class="form-control search-input me-2" type="search"
+          placeholder="Search by destination..." required>
+        <button class="btn search-button" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="text-center my-4">
+      <h2>Explore Korea with Us!</h2>
+    </div>
+    <div id="resultArea" class="row mt-4 g-3"></div>
+  </div>
+
+  <!-- All Tours Section -->
+  <div class="container my-5">
+    <h3 class="mb-4">All Tours</h3>
+    <h5 class="text-muted mb-4"> “Embark on a journey across Korea with our carefully curated tours.
+      From the bustling streets of Seoul to the serene beaches of Jeju, and the historical treasures of Gyeongju, each
+      tour promises a unique glimpse into Korea’s vibrant culture, history, and breathtaking landscapes.
+      Whether you’re a first-time visitor or a returning traveler, find the perfect itinerary to create unforgettable
+      memories.” </h5>
+    <div id="tourCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- First Slide -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+
+            <div class="col-md-3">
+              <div class="card tour-card h-100 shadow-sm">
+                <img src="Picture/b2.jpg" alt="Seoul Tour" class="card-img-top">
+                <div class="card-body text-center">
+                  <p class="text-muted small mb-1">Dec 22, 2022 · 5 mins read</p>
+                  <h6 class="fw-bold mb-2">Seoul Tour</h6>
+                  <p><span class="price-badge">$250</span></p>
+                  <button onclick="saveTour('Seoul Tour', 'Seoul', '$250', '3 days', 'b2.jpg')"
+                    class="btn btn-outline-primary btn-sm mt-2">
+                    Save this Tour
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card tour-card h-100 shadow-sm">
+                <img src="Picture/68.jpg" alt="Busan Tour" class="card-img-top">
+                <div class="card-body text-center">
+                  <p class="text-muted small mb-1">Nov 20, 2022 · 10 mins read</p>
+                  <h6 class="fw-bold mb-2">Busan Tour</h6>
+                  <p><span class="price-badge">$250</span></p>
+                  <button onclick="saveTour('Busan Tour', 'Busan', '$250', '2 days', '68.jpg')"
+                    class="btn btn-outline-primary btn-sm mt-2">
+                    Save this Tour
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card tour-card h-100 shadow-sm">
+                <img src="Picture/download.jpeg" alt="Jeju Island Tour" class="card-img-top">
+                <div class="card-body text-center">
+                  <p class="text-muted small mb-1">Nov 12, 2022 · 8 mins read</p>
+                  <h6 class="fw-bold mb-2">Jeju Island Tour</h6>
+                  <p><span class="price-badge">$180</span></p>
+                  <button onclick="saveTour('Jeju Island Tour', 'Jeju', '$180', '4 days', 'download.jpeg')"
+                    class="btn btn-outline-primary btn-sm mt-2">
+                    Save this Tour
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card tour-card h-100 shadow-sm">
+                <img src="Picture/Gyeongju.jpg" alt="Gyeongju Tour" class="card-img-top">
+                <div class="card-body text-center">
+                  <p class="text-muted small mb-1">Nov 12, 2022 · 6 mins read</p>
+                  <h6 class="fw-bold mb-2">Gyeongju Tour</h6>
+                  <p><span class="price-badge">$200</span></p>
+                  <button onclick="saveTour('Gyeongju Tour', 'Gyeongju', '$200', '2 days', 'Gyeongju.jpg')"
+                    class="btn btn-outline-primary btn-sm mt-2">
+                    Save this Tour
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Second Slide -->
+        <div class="carousel-item">
+          <div class="row g-4">
+
+            <div class="col-md-3">
+              <div class="card tour-card h-100 shadow-sm">
+                <img src="Picture/MountSeoraksanNationalPark.jpg" alt="Mount Seoraksan National Park Tour"
+                  class="card-img-top">
+                <div class="card-body text-center">
+                  <p class="text-muted small mb-1">Mar 20, 2023 · 7 mins read</p>
+                  <h6 class="fw-bold mb-2">Mount Seoraksan National Park Tour</h6>
+                  <p><span class="price-badge">$200</span></p>
+                  <button
+                    onclick="saveTour('Mount Seoraksan National Park Tour', 'Seoraksan', '$200', '1 day', 'MountSeoraksanNationalPark.jpg')"
+                    class="btn btn-outline-primary btn-sm mt-2">
+                    Save this Tour
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card tour-card h-100 shadow-sm">
+                <img src="Picture/Jeonju.jpg" alt="Jeonju Tour" class="card-img-top">
+                <div class="card-body text-center">
+                  <p class="text-muted small mb-1">Dec 1, 2022 · 4 mins read</p>
+                  <h6 class="fw-bold mb-2">Jeonju Tour</h6>
+                  <p><span class="price-badge">$200</span></p>
+                  <button onclick="saveTour('Jeonju Tour', 'Jeonju', '$200', '1 day', 'Jeonju.jpg')"
+                    class="btn btn-outline-primary btn-sm mt-2">
+                    Save this Tour
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card tour-card h-100 shadow-sm">
+                <img src="Picture/Wonju.jpg" alt="Wonju Tour" class="card-img-top">
+                <div class="card-body text-center">
+                  <p class="text-muted small mb-1">Oct 10, 2022 · 6 mins read</p>
+                  <h6 class="fw-bold mb-2">Wonju Tour</h6>
+                  <p><span class="price-badge">$200</span></p>
+                  <button onclick="saveTour('Wonju Tour', 'Wonju', '$200', '1 day', 'Wonju.jpg')"
+                    class="btn btn-outline-primary btn-sm mt-2">
+                    Save this Tour
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card tour-card h-100 shadow-sm">
+                <img src="Picture/Incheon.jpg" alt="Incheon Tour" class="card-img-top">
+                <div class="card-body text-center">
+                  <p class="text-muted small mb-1">Aug 15, 2022 · 3 mins read</p>
+                  <h6 class="fw-bold mb-2">Incheon Tour</h6>
+                  <p><span class="price-badge">$200</span></p>
+                  <button onclick="saveTour('Incheon Tour', 'Incheon', '$200', '1 day', 'Incheon.jpg')"
+                    class="btn btn-outline-primary btn-sm mt-2">
+                    Save this Tour
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#tourCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#tourCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- By Type Section -->
+  <div class="container my-5">
+    <h3 class="mb-4">By Type</h3>
+    <h5 class="text-muted mb-4">“Choose your adventure based on the experiences you love most.
+      Whether you’re passionate about cultural heritage, excited by vibrant festivals, inspired by nature’s beauty, or
+      seeking peaceful retreats, our tours by type help you explore Korea in the way that resonates with you.
+      Discover journeys that match your travel dreams.”</h5>
+    <div id="typeCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Culture Slide -->
+        <div class="carousel-item active section-box p-4">
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <h5 class="fw-bold">Culture and Heritage</h5>
+              <p class="text-muted">Immerse yourself in Korea’s rich cultural heritage, where centuries-old traditions
+                blend seamlessly with breathtaking historical sites, from ancient palaces and temples to vibrant folk
+                villages and UNESCO World Heritage landmarks.</p>
+              <button class="btn search-button rounded-pill" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#typeInfoCanvas" onclick="showTypeInfo('Culture and Heritage')">
+                More Information
+              </button>
+            </div>
+            <div class="col-md-8">
+              <img src="Picture/20201223175546958_DBYXIVQL.jpg" class="img-fluid rounded w-100 type-image">
+            </div>
+          </div>
+        </div>
+
+        <!-- Festivals Slide -->
+        <div class="carousel-item section-box p-4">
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <h5 class="fw-bold">Festivals</h5>
+              <p class="text-muted">Experience Korea’s vibrant festivals where ancient traditions meet lively modern
+                celebrations. From the glowing lanterns of the Lotus Lantern Festival to the spirited fun of the
+                Boryeong Mud Festival, each event offers unforgettable memories through music, dance, parades, and
+                authentic Korean cuisine.</p>
+              <button class="btn search-button rounded-pill" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#typeInfoCanvas" onclick="showTypeInfo('Culture and Heritage')">
+                More Information
+              </button>
+            </div>
+            <div class="col-md-8">
+              <img src="Picture/festival.jpg" class="img-fluid rounded w-100 type-image">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#typeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#typeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+  <!-- "More information" details-->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="typeInfoCanvas" aria-labelledby="typeInfoLabel">
+    <div class="offcanvas-header">
+      <h5 id="typeInfoLabel">Tour Information</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p id="typeInfoContent">Select a tour type to see more information.</p>
+    </div>
+  </div>
+  <!-- Back to Top Button -->
+  <button onclick="topFunction()" id="backToTopBtn" title="Back to Top" class="btn btn-primary rounded-circle shadow"
+    style="display:none; position:fixed; bottom:30px; right:30px; z-index:99;">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-pink">
+    <p>© 2025 Visit Korea. Last updated: April 2025. Contact: info@visitkorea.com</p>
+  </footer>
+
+
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="signupForm" action="#">
+            <div id="signupError"></div>
+
+            <!-- Input Username -->
+            <div class="mb-3">
+              <label for="signupUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="signupUsername" required>
+            </div>
+
+            <!-- Input Email -->
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="signupEmail" required>
+            </div>
+
+            <!-- Input Password -->
+            <div class="mb-3">
+              <label for="signupPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="signupPassword" required>
+            </div>
+
+            <!-- Input Confirm Password -->
+            <div class="mb-3">
+              <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="signupConfirmPassword" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function showTypeInfo(type) {
+      const infoContent = {
+        "Culture and Heritage": `Embark on a timeless journey into Korea’s vibrant culture and storied past.
+    Explore majestic royal palaces like Gyeongbokgung and Changdeokgung, where the grandeur of ancient dynasties still echoes through ornate architecture and sprawling courtyards.
+    Visit centuries-old Buddhist temples, peacefully nestled amid misty mountains, offering moments of reflection and spiritual calm.
+    Stroll through traditional hanok villages, where tiled rooftops and narrow alleyways transport you back to a simpler time, and artisans still craft pottery, hanbok, and calligraphy by hand.
+    Experience colorful cultural performances, timeless rituals, and festivals that bring history vividly to life.
+    Korea’s cultural heritage is not just preserved in museums — it lives in every street, every market, and every warm greeting, inviting you to connect deeply with its enduring soul.`,
+
+        "Festivals": `Immerse yourself in Korea’s spectacular festivals, where ancient traditions meet modern celebrations in a vibrant display of color, music, and dance.
+    From the glowing lanterns of the Lotus Lantern Festival to the joyful madness of the Boryeong Mud Festival, each event invites you to participate, not just observe.
+    Enjoy mesmerizing traditional performances, dynamic street parades, and culinary feasts that showcase the heart and spirit of Korean culture.
+    No matter the season, Korea’s festivals offer unforgettable memories filled with energy, creativity, and community.`
+      };
+
+      document.getElementById('typeInfoLabel').innerText = type;
+      document.getElementById('typeInfoContent').innerText = infoContent[type] || "More information coming soon!";
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

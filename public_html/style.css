@@ -1,0 +1,687 @@
+/* ====== Layout & Base ====== */
+body {
+  background-color: #fff0f5;
+  /* Light pink */
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Banner */
+.banner {
+  background-image: url('Picture/banner2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: rgb(44, 13, 13);
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.23);
+  z-index: 1;
+}
+
+.banner h1,
+.banner p {
+  z-index: 2;
+}
+
+/* Container */
+.container {
+  max-width: 1800px;
+}
+
+/* Navbar */
+.navbar {
+  padding: 1rem 0;
+  background-color: #f9c9d2;
+  min-height: 70px;
+  z-index: 999;
+}
+
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #f7b0c2;
+  border-radius: 5px;
+}
+
+.circle-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Footer */
+footer {
+  background-color: #f9c9d2;
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid #f9c9d2;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.footer-icons a:hover {
+  color: #f191aa;
+}
+
+/* Search Bar Customization */
+.search-input {
+  max-width: 250px;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.search-button {
+  border-radius: 30px;
+  padding: 10px 20px;
+  background-color: #f9c9d2;
+  border: none;
+  color: black;
+}
+
+.search-button:hover {
+  background-color: #f7b0c2;
+  color: white;
+}
+
+/* ====== Tour Card Design ====== */
+.tour-card {
+  border: 1px solid #f9c9d2;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(249, 105, 180, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+  /* Ensure correct card height */
+}
+
+.tour-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(249, 105, 180, 0.3);
+}
+
+.tour-card-img {
+  height: 220px;
+  /* Fixed image height */
+  object-fit: cover;
+  /* Prevent image distortion */
+}
+
+/* Tour Price Styling */
+.price-badge {
+  background-color: #f9c9d2;
+  color: black;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.price-badge:hover {
+  background-color: #f7b0c2;
+  /* Hover background color */
+  color: white;
+  /* Hover text color */
+}
+
+/* ====== Working Hours Table ====== */
+.working-hours-table {
+  background-color: #fff0f5 !important;
+  border: 1px solid #dee2e6;
+}
+
+.working-hours-table thead th {
+  background-color: #f9c9d2 !important;
+  color: black;
+}
+
+.working-hours-table tbody tr td {
+  background-color: #fff0f5 !important;
+}
+
+.working-hours-table tbody tr:hover td {
+  background-color: #f7b0c2 !important;
+}
+
+/* ====== Carousel (Type Section) ====== */
+.carousel-inner {
+  background-color: #ffeef2;
+  border: 1px solid #f191aa;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(249, 105, 180, 0.2);
+}
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* xám trong suốt */
+  background-size: 50% 50%;
+  border-radius: 50%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+/* ====== Contact Card Styling ====== */
+.contact-card {
+  background-color: #ffffff;
+  border: 1px solid #f191aa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(249, 105, 180, 0.2);
+}
+
+/* ====== Modal Styling ====== */
+#registerModal .modal-content {
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+#registerModal .modal-header {
+  border-bottom: none;
+}
+
+#registerModal .form-label {
+  font-weight: 600;
+}
+
+#registerModal .form-control {
+  margin-bottom: 1.5rem;
+}
+
+#registerModal button {
+  font-size: 1rem;
+  padding: 0.8rem;
+}
+
+/* Avatar Image */
+.avatar-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #f191aa;
+}
+
+/* Send Message Button */
+.btn-primary {
+  background-color: #f9c9d2 !important;
+  /* Pastel pink */
+  border-color: #f9c9d2 !important;
+  color: black !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:focus-visible,
+.btn-primary.show {
+  background-color: #f7b0c2 !important;
+  /* Darker pink on hover */
+  border-color: #f7b0c2 !important;
+  color: white !important;
+}
+
+/* By Type Image */
+.carousel-item img {
+  object-fit: cover;
+  max-height: 400px;
+  /* Prevent image stretching */
+  border-radius: 10px;
+}
+
+/* More Information Button Style */
+.carousel-item .btn-outline-primary {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-item .btn-outline-primary:hover {
+  background-color: #f9c9d2;
+  color: black;
+}
+
+/* Testimonials Section */
+.testimonials-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(249, 105, 180, 0.2);
+}
+
+.testimonials-image {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(249, 105, 180, 0.2);
+}
+
+.testimonial-content,
+.testimonials-image {
+  background-color: #ffffff;
+}
+
+#categoryImage {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+#categoryImage,
+#categoryTitle,
+#categoryDesc {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+#tourCarousel .carousel-control-prev,
+#tourCarousel .carousel-control-next,
+#typeCarousel .carousel-control-prev,
+#typeCarousel .carousel-control-next {
+  width: 5%;
+}
+
+#tourCarousel .carousel-control-prev {
+  left: -60px;
+}
+
+#tourCarousel .carousel-control-next {
+  right: -60px;
+}
+
+#typeCarousel .carousel-control-prev {
+  left: -60px;
+}
+
+#typeCarousel .carousel-control-next {
+  right: -60px;
+}
+
+#typeCarousel .carousel-item .col-md-4 {
+  padding-left: 3rem;
+}
+
+/* ====== About Us Section ====== */
+.about-section {
+  background-color: #fff0f5;
+}
+
+.learn-more-btn {
+  background-color: #f9c9d2;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: #f7b0c2;
+  color: white;
+}
+
+/* Tour Staff Section */
+.our-staff-section {
+  background-color: #ffeef2;
+}
+
+.staff-card {
+  border: 1px solid #f9c9d2;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(249, 105, 180, 0.3);
+}
+
+.staff-card img {
+  height: 700px;
+  object-fit: cover;
+}
+
+.info-frame {
+  background-color: #f9c9d2;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(249, 105, 180, 0.2);
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #f9c9d2;
+  color: black;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#backToTopBtn:hover {
+  background-color: #f7b0c2;
+  color: white;
+}
+
+/* Section Box */
+.section-box {
+  background-color: #ffffff;
+  border: 1px solid #f8d7da;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Travel Story Section */
+.bg-pink {
+  background-color: #f9c9d2;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#travelStoryCarousel .carousel-inner {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#travelStoryPagination .page-item .page-link {
+  border-radius: 50px;
+  border: 1px solid #d63384;
+  color: #d63384;
+  font-weight: bold;
+  background-color: white;
+  margin: 0 5px;
+}
+
+#travelStoryPagination .page-item .page-link:hover,
+#travelStoryPagination .page-item .page-link:focus {
+  background-color: #d63384;
+  color: white;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-box {
+  animation: floating 3s ease-in-out infinite;
+  background-color: #f9c9d2;
+  border: 1px solid #1b1a1a;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(249, 105, 180, 0.25);
+}
+
+.promotion-button {
+  background-color: #ffffff;
+  color: #d63384;
+  border: 2px solid #f191aa;
+  font-weight: bold;
+  padding: 10px 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.promotion-button:hover {
+  background-color: #f9c9d2;
+  color: white;
+  border-color: #f191aa;
+}
+
+/* News Page */
+.event-image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.event-caption {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.event-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.event-date {
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#foodCultureCarousel .carousel-control-prev-icon,
+#foodCultureCarousel .carousel-control-next-icon {
+  display: none;
+}
+
+#thingsToDoCarousel .carousel-item,
+#foodCultureCarousel .carousel-item,
+#seasonalTripsCarousel .carousel-item {
+  background-color: #ffffff;
+  border: 1px solid #f8d7da;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+.hero-video-wrapper {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-slide,
+.image-slide {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.image-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  top: 55%;
+  transform: translateY(-50%);
+  color: white;
+  padding: 20px;
+}
+
+.overlay a.btn {
+  margin-top: 40px;
+}
+
+.tour-card.testimonials-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+.testimonial-card {
+  background-color: #fdf7f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.01);
+}
+
+.avatar-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.star-rating i {
+  color: #ffc107;
+  font-size: 16px;
+}
+
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-img-container {
+  height: 200px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.tour-card:hover .card-img-container {
+  transform: scale(1.03);
+}
+
+.tour-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.tour-card:hover {
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.seasonal-image {
+  transition: all 0.5s ease;
+  object-fit: cover;
+}
+
+.page-link.active {
+  background-color: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
+
+#favouriteToursCarousel .carousel-inner {
+  min-height: 400px;
+  /* đảm bảo có chiều cao ban đầu */
+}
+
+#favouriteToursCarousel .carousel-item img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
