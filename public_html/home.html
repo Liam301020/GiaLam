@@ -361,54 +361,42 @@
   </div>
 
   <!-- Developer Feature Descriptions -->
-  <div class="container my-5">
-    <div class="text-end">
-      <button class="btn search-button" onclick="toggleFeatureInfo()">🔧 View Implemented Features</button>
-    </div>
-
-    <div id="featureInfo" class="mt-4" style="display: none;">
-      <h5>Implemented Features and How They Were Built (Developer Notes)</h5>
-
-      <p><strong>1. Secure User Authentication</strong><br>
-        Passwords are securely hashed using <code>bcrypt</code> before being stored in the database. This ensures no
-        plain text credentials are saved. The frontend sends form data via <code>POST</code> with JSON format to avoid
-        exposure in URLs.
-      </p>
-
-      <p><strong>2. Form Validation (Client-Side)</strong><br>
-        HTML5 validation (e.g., <code>required</code>, <code>type="email"</code>) is combined with JavaScript checks to
-        ensure fields like email, phone number, and matching passwords are correct before submission. Errors are
-        displayed dynamically without page reload.
-      </p>
-
-      <p><strong>3. Bootstrap UI and Styling</strong><br>
-        The website is styled using Bootstrap 5.3, including a video banner, responsive layout, carousels, modals, and
-        styled buttons. These enhance user interaction and mobile responsiveness.
-      </p>
-
-      <p><strong>4. Dynamic Tour Search Using JSON</strong><br>
-        Users can search for tours by keyword. The frontend sends a <code>fetch</code> request to the server route
-        <code>/search</code>, which queries the SQLite database and returns JSON. JavaScript then dynamically renders
-        tour cards into the page.
-      </p>
-
-      <p><strong>5. Server-Side Error Handling</strong><br>
-        The Express backend returns structured JSON error messages for conditions such as duplicate registration,
-        missing fields, or database issues. The frontend reads these messages and shows them directly under the form
-        using Bootstrap styles.
-      </p>
-
-      <p><strong>6. Permanent Data Storage with SQLite</strong><br>
-        All user and tour data is stored persistently using SQLite. The <code>init.js</code> script defines and
-        populates three tables: <code>users</code>, <code>messages</code>, and <code>tours</code>. These are queried and
-        updated using <code>db.run()</code> and <code>db.all()</code> in the Express server.
-      </p>
-
-      <p><em>This section is included as part of the task requirement to document how features were implemented. It
-          serves as a mini wiki/tutorial to help other developers understand and replicate the project’s
-          functionality.</em></p>
-    </div>
+  <!-- Developer Feature Descriptions -->
+<div class="container my-5">
+  <div class="text-end">
+    <button class="btn search-button" onclick="toggleFeatureInfo()">🔧 View Implemented Features</button>
   </div>
+
+  <div id="featureInfo" class="mt-4" style="display: none;">
+    <h5>Implemented Features and How They Were Built (Developer Notes)</h5>
+
+    <p><strong>1. Secure User Authentication</strong><br>
+      Passwords are securely hashed using <code>bcrypt</code> before being stored in the SQLite database. The frontend sends user credentials using <code>POST</code> with <code>Content-Type: application/json</code>, ensuring they are not exposed in URLs or browser history.
+    </p>
+
+    <p><strong>2. Client-Side Form Validation</strong><br>
+      Validation combines native HTML5 attributes (e.g., <code>required</code>, <code>type="email"</code>) with JavaScript logic to check input fields such as email format, phone number, and password confirmation. Feedback is displayed inline without reloading the page.
+    </p>
+
+    <p><strong>3. Responsive UI with Bootstrap 5.3</strong><br>
+      The site layout is styled using Bootstrap, featuring a responsive grid, sticky navigation bar, animated carousels, modals, and styled buttons. These components improve accessibility, cross-device compatibility, and user engagement.
+    </p>
+
+    <p><strong>4. Dynamic Tour Search with JSON</strong><br>
+      When users enter a keyword, the frontend sends a <code>fetch()</code> request to the <code>/search</code> route. The server queries the SQLite database and returns matching tours as JSON, which are then dynamically rendered as Bootstrap cards using JavaScript.
+    </p>
+
+    <p><strong>5. Server-Side Error Handling</strong><br>
+      The backend uses structured <code>try/catch</code> logic to catch database and logic errors. It returns JSON responses with appropriate HTTP status codes. The frontend reads these messages and shows real-time inline error feedback under forms.
+    </p>
+
+    <p><strong>6. Persistent Storage Using SQLite</strong><br>
+      All user, message, and tour data is stored using SQLite. The <code>init.js</code> script defines and pre-populates three main tables: <code>users</code>, <code>messages</code>, and <code>tours</code>. These are queried using <code>db.all()</code> and modified via <code>db.run()</code> in Express routes.
+    </p>
+
+    <p><em>This section is included to fulfill the task requirement of documenting how each core feature was implemented. It acts as a mini technical wiki to support assessors and future developers in understanding, replicating, or extending this project.</em></p>
+  </div>
+</div>
 
   <script>
     function toggleFeatureInfo() {
